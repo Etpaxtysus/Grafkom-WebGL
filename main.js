@@ -67,14 +67,14 @@ function main(){
     glMatrix.mat4.lookAt(viewMatrix,
         [0.0, 0.0, 5.0], // posisi kamera di titik Z lebih jauh
         [0.0, 0.0, -2.0], // kemana kamera menghadap
-        [0.0, 1.0, 0.0] // arah atas kamera
+        [0.0, 1.0, 0.0, 0.0] // arah atas kamera
     );
     
 
     var angle = glMatrix.glMatrix.toRadian(1);
     function render(time){
         if (!freeze){
-            glMatrix.mat4.rotate(modMatrix, modMatrix, angle, [1.0,1.0,1.0]);
+            glMatrix.mat4.rotate(modMatrix, modMatrix, angle, [1.0,0.0,0.0]);
         }
 
         gl.enable(gl.DEPTH_TEST);
